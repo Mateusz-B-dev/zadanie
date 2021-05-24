@@ -1,0 +1,32 @@
+#title {
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.description {
+    margin-top: -50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.description-top {
+    font-size: xx-small;
+}
+
+#man {
+    z-index: 1000;
+    position: absolute;
+    width: 350px;
+    height: 250px;
+    border-radius: 5px;
+    margin-left: -100px;
+}
+
+#chart2 {
+    z-index: 100;
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    margin-top: -100px;
+    margin-left: -50px;
+}

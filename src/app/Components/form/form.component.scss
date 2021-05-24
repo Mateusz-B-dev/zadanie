@@ -1,0 +1,18 @@
+$color-secondary: brown;
+
+.submitButton {
+    z-index: 1000;
+    position: relative;
+}
+
+.errorText {
+    color:crimson;
+    font-size: small;
+}
+
+.btn-color {
+    max-width: 150px;
+    background-color: rgb(220, 224, 220);
+    border-color: $color-secondary;
+    font-size: x-large;
+}

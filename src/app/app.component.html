@@ -1,41 +1,6 @@
 <div class="container mt-5">
   <div class="top">
-    <div class="row">
-      <div class="col-4 d-none d-lg-block">
-        <img src="../assets/scissors.svg">
-      </div>
-      <div class="col">
-        <div style="margin-top: 150px;" class="d-flex justify-content-center">
-          <span id="title">Lorem ipsum set dolore amet duis sir class!</span>
-        </div>
-      </div>
-      <div class="col">
-        <!-- empty -->
-      </div>
-    </div>
-    <div class="description row">
-      <div class="col-12 col-md-12 col-xl-4">
-        <div class="description-top row mb-3">
-          Duis sit amet erat non velit rhoncus sollicitudin. Aenean ultrices ornare ligula, eu tristique nisi tincidunt
-          et. Ut sed lacus turpis. Suspendisse tincidunt blandit mauris non aliquet. Mauris dignissim, eros ut
-          consectetur
-          ullamcorper, magna tellus cursus lorem, eget pharetra justo mauris in dui. Fusce eget mauris sit amet sapien
-          posuere vulputate eget ac nunc. In vitae feugiat turpis, eget semper ipsum. Vivamus convallis ornare nisi in
-          elementum.
-        </div>
-        <div class="row pt-3">
-          Phasellus ligula justo, feugiat eget sollicitudin eu, vehicula eget massa. Class aptent taciti sociosqu ad
-          litora torquent per conubia nostra, per inceptos himenaeos.
-        </div>
-      </div>
-      <div class="col">
-        <!-- empty -->
-      </div>
-      <div class="d-none d-xl-block col-12 col-md-12 col-xl-4">
-        <img id="man" src="../assets/man.png" alt="Italian Trulli">
-        <img id="chart2" src="../assets/chart2.svg">
-      </div>
-    </div>
+    <app-top></app-top>
   </div>
 
   <div class="center">
@@ -130,66 +95,7 @@
     </div>
     <div z class="row justify-content-evenly mt-5">
       <div class="d-flex justify-content-center">
-        <form [formGroup]="formContact" (ngSubmit)="sendMoney(item)">
-          <div class="row justify-content-evenly">
-            <div class="col-10 col-md-6 col-xl-6">
-              <div class="mb-3">
-                <input type="text" matInput formControlName="name" placeholder="Imię i nazwisko" class="form-control">
-                <mat-error *ngIf="formContact.controls.name.hasError('required') && formContact.controls.name.touched">
-                  <p class="errorText">Please enter a valid name</p>
-                </mat-error>
-              </div>
-              <div class="mb-3">
-                <input type="text" matInput formControlName="email" placeholder="Email" class="form-control">
-                <mat-error *ngIf="formContact.controls.email.hasError('email')">
-                  <p class="errorText">Please enter a valid email address</p>
-                </mat-error>
-              </div>
-              <div class="mb-3">
-                <input type="tel" matInput mask="000-000-000" formControlName="phone" placeholder="Telefon" class="form-control">
-                <mat-error *ngIf="formContact.controls.phone.hasError('required') && formContact.controls.name.touched">
-                  <p class="errorText">Please enter a valid phone</p>
-                </mat-error>
-              </div>
-            </div>
-            <div class="col-10 col-md-6 col-xl-6">
-              <div class="mb-3">
-                <input type="text" matInput formControlName="street" placeholder="Ulica" class="form-control">
-                <mat-error *ngIf="formContact.controls.street.hasError('required') && formContact.controls.name.touched">
-                  <p class="errorText">Please enter a valid street name</p>
-                </mat-error>
-              </div>
-              <div class="mb-3">
-                <input type="text" matInput formControlName="city" placeholder="Miasto" class="form-control">
-                <mat-error *ngIf="formContact.controls.city.hasError('required') && formContact.controls.name.touched">
-                  <p class="errorText">Please enter a valid city</p>
-                </mat-error>
-              </div>
-              <div class="mb-3">
-                <input type="text" maxlength="6" mask="00-000" matInput formControlName="code" placeholder="Kod pocztowy" class="form-control">
-                <mat-error *ngIf="formContact.controls.code.hasError('required') && formContact.controls.name.touched">
-                  <p class="errorText">Please enter a valid code</p>
-                </mat-error>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="d-flex justify-content-center">
-              <p>Twój unikalny kod: #143256</p>
-            </div>
-            <div class="col-10 col-md-12 col-xl-12 ml-3">
-              <div class="mb-3 submitButton form-check">
-                <input formControlName="rodo" type="checkbox" formControlName="rodo" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Wyrażam zgodę na przetwa..... tekst RODO </label>
-              </div>
-            </div>
-          </div>
-          <div class="row submitButton mt-5 mb-5">
-            <div class="d-flex justify-content-center">
-              <button mat-button type="submit" [disabled]="!formContact.valid" class="btn btn-color">Wspieram</button>
-            </div>
-          </div>
-        </form>
+        <app-form></app-form>
       </div>
     </div>
     <div class="row chart3">
@@ -199,45 +105,6 @@
     </div>
   </div>
   <div class="bottom">
-    <div class="ml-3 mr-3 pt-3">
-    <div class="row ">
-      <div class="col">
-        Poprzednie edycje:
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-2">
-        Pierwsza edycja
-      </div>
-      <div class="col-2">
-        Druga edycja
-      </div>
-      <div class="col-2">
-        Trzecia edycja
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="d-flex flex-row-reverse">
-          <img src="../assets/fb.svg">
-          <img src="../assets/itg.svg">
-        </div>
-      </div>
-    </div>
-    <div class="row mt-5">
-      <div>
-        <p>© 2019 Nazwa firmy sp. z o.o. wszystkie prawa zastrzeżone</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col">
-        <div>
-          <p>Polityka prywatności</p>
-        </div>
-      </div>
-    </div>
-  </div>
+    <app-footer></app-footer>
 </div>
 </div>

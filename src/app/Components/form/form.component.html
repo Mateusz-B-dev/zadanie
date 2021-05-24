@@ -1,0 +1,60 @@
+<form [formGroup]="formContact" (ngSubmit)="sendMoney(item)">
+  <div class="row justify-content-evenly">
+    <div class="col-10 col-md-6 col-xl-6">
+      <div class="mb-3">
+        <input type="text" matInput formControlName="name" placeholder="Imię i nazwisko" class="form-control">
+        <mat-error *ngIf="formContact.controls.name.hasError('required') && formContact.controls.name.touched">
+          <p class="errorText">Please enter a valid name</p>
+        </mat-error>
+      </div>
+      <div class="mb-3">
+        <input type="text" matInput formControlName="email" placeholder="Email" class="form-control">
+        <mat-error *ngIf="formContact.controls.email.hasError('email')">
+          <p class="errorText">Please enter a valid email address</p>
+        </mat-error>
+      </div>
+      <div class="mb-3">
+        <input type="tel" matInput mask="000-000-000" formControlName="phone" placeholder="Telefon" class="form-control">
+        <mat-error *ngIf="formContact.controls.phone.hasError('required') && formContact.controls.name.touched">
+          <p class="errorText">Please enter a valid phone</p>
+        </mat-error>
+      </div>
+    </div>
+    <div class="col-10 col-md-6 col-xl-6">
+      <div class="mb-3">
+        <input type="text" matInput formControlName="street" placeholder="Ulica" class="form-control">
+        <mat-error *ngIf="formContact.controls.street.hasError('required') && formContact.controls.name.touched">
+          <p class="errorText">Please enter a valid street name</p>
+        </mat-error>
+      </div>
+      <div class="mb-3">
+        <input type="text" matInput formControlName="city" placeholder="Miasto" class="form-control">
+        <mat-error *ngIf="formContact.controls.city.hasError('required') && formContact.controls.name.touched">
+          <p class="errorText">Please enter a valid city</p>
+        </mat-error>
+      </div>
+      <div class="mb-3">
+        <input type="text" maxlength="6" mask="00-000" matInput formControlName="code" placeholder="Kod pocztowy" class="form-control">
+        <mat-error *ngIf="formContact.controls.code.hasError('required') && formContact.controls.name.touched">
+          <p class="errorText">Please enter a valid code</p>
+        </mat-error>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="d-flex justify-content-center">
+      <p>Twój unikalny kod: #143256</p>
+    </div>
+    <div class="col-10 col-md-12 col-xl-12 ml-3">
+      <div class="mb-3 submitButton form-check">
+        <input formControlName="rodo" type="checkbox" formControlName="rodo" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Wyrażam zgodę na przetwa..... tekst RODO </label>
+      </div>
+    </div>
+  </div>
+  <div class="row submitButton mt-5 mb-5">
+    <div class="d-flex justify-content-center">
+      <button mat-button type="submit" [disabled]="!formContact.valid" class="btn btn-color">Wspieram</button>
+    </div>
+  </div>
+</form>

@@ -7,10 +7,16 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { MatButtonModule } from '@angular/material/button';
 import { NgxMaskModule } from 'ngx-mask';
+import { TopComponent } from './Components/top/top.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { FormComponent } from './Components/form/form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopComponent,
+    FooterComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
